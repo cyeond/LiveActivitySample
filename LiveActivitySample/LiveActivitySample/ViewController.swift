@@ -10,16 +10,33 @@ import PhotosUI
 
 class ViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var titleTF: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     
+    private var changeTitleAlertController: UIAlertController?
     private var phPicker: PHPickerViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.titleTF.delegate = self
+        
+        self.configureChangeTitleAlertController()
         self.configurePHPicker()
         
+    }
+    
+    private func configureChangeTitleAlertController() {
+        let alertController = UIAlertController(title: "Change Title", message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            if let text = alertController.textFields?.first?.text, !text.isEmpty {
+                DispatchQueue.main.async {
+                    self.titleLabel.text = text
+                    alertController.textFields?.first?.text = ""
+                }
+            }
+        }
+        alertController.addTextField()
+        alertController.addAction(okAction)
+        
+        self.changeTitleAlertController = alertController
     }
     
     private func configurePHPicker() {
@@ -42,28 +59,27 @@ class ViewController: UIViewController {
     }
     
     @IBAction func update(_ sender: UIButton) {
-        if let title = titleTF.text, !title.isEmpty {
-            titleLabel.text = title
-            titleTF.text = ""
+        if let title = titleLabel.text, !title.isEmpty {
             LiveActivityManager.shared.updateActivity(title: title, time: Date() + 60.0)
         }
     }
     
+    @IBAction func changeTitle(_ sender: UIButton) {
+        guard let alert = self.changeTitleAlertController else {
+            // handle error
+            return
+        }
+        
+        self.present(alert, animated: true)
+    }
+    
     @IBAction func changeImage(_ sender: UIButton) {
         guard let phPicker = self.phPicker else {
-            //
+            // handle error
             return
         }
         
         self.present(phPicker, animated: true)
-    }
-}
-
-// MARK: UITextFieldDelegate
-extension ViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }
 
@@ -76,7 +92,7 @@ extension ViewController: PHPickerViewControllerDelegate {
         if let itemProvider = results.first?.itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self) {
             itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
                 guard let image = image as? UIImage else {
-                    //
+                    // handle error
                     return
                 }
                 DispatchQueue.main.async {
@@ -84,7 +100,7 @@ extension ViewController: PHPickerViewControllerDelegate {
                 }
             }
         } else {
-            //
+            // handle error
         }
     }
 }
