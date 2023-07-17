@@ -16,11 +16,11 @@ class LiveActivityManager {
     
     private init() { }
     
-    func startActivity(name: String) {
+    func startActivity(title: String) {
         guard ActivityAuthorizationInfo().areActivitiesEnabled else { return }
         Task {
             do {
-                let updatedStatus = LiveActivityAttributes.ContentState(name: name)
+                let updatedStatus = LiveActivityAttributes.ContentState(title: title, time: Date())
                 let content = ActivityContent(state: updatedStatus, staleDate: nil)
                 let activity = try Activity<LiveActivityAttributes>.request(
                     attributes: LiveActivityAttributes(),
@@ -40,9 +40,9 @@ class LiveActivityManager {
         }
     }
     
-    func updateActivity(name: String) {
+    func updateActivity(title: String, time: Date) {
         Task {
-            let updatedStatus = LiveActivityAttributes.ContentState(name: name)
+            let updatedStatus = LiveActivityAttributes.ContentState(title: title, time: time)
             let content = ActivityContent(state: updatedStatus, staleDate: nil)
             await activity?.update(content)
         }

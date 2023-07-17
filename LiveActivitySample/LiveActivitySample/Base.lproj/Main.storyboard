@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eZy-wR-7Q8">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eZy-wR-7Q8">
                                 <rect key="frame" x="20" y="411" width="353" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -28,7 +28,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgW-Im-gVf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgW-Im-gVf">
                                 <rect key="frame" x="20" y="341" width="353" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,7 +49,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Change"/>
                                 <connections>
-                                    <action selector="changeName:" destination="bcI-rv-NMB" eventType="touchUpInside" id="Rku-hy-mXY"/>
+                                    <action selector="changeTitle:" destination="bcI-rv-NMB" eventType="touchUpInside" id="Rku-hy-mXY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -67,8 +67,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="nameLabel" destination="VgW-Im-gVf" id="mSc-eU-9BG"/>
-                        <outlet property="nameTF" destination="eZy-wR-7Q8" id="3gM-Qd-gv4"/>
+                        <outlet property="titleLabel" destination="VgW-Im-gVf" id="mSc-eU-9BG"/>
+                        <outlet property="titleTF" destination="eZy-wR-7Q8" id="3gM-Qd-gv4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qux-Oz-8HC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

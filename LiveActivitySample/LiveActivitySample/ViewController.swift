@@ -8,18 +8,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var nameTF: UITextField!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleTF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.nameTF.delegate = self
+        self.titleTF.delegate = self
     }
     
-    @IBAction func changeName(_ sender: UIButton) {
-        if let name = nameTF.text, !name.isEmpty {
-            nameLabel.text = name
-            LiveActivityManager.shared.updateActivity(name: name)
+    @IBAction func changeTitle(_ sender: UIButton) {
+        if let title = titleTF.text, !title.isEmpty {
+            titleLabel.text = title
+            LiveActivityManager.shared.updateActivity(title: title, time: Date() + 60.0)
         }
     }
 }

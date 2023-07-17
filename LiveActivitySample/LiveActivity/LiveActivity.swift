@@ -5,25 +5,13 @@
 //  Created by YD on 2023/07/16.
 //
 
-import ActivityKit
 import WidgetKit
 import SwiftUI
-
-struct LiveActivityAttributes: ActivityAttributes {
-    public struct ContentState: Codable, Hashable {
-        var name: String
-    }
-}
 
 struct LiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: LiveActivityAttributes.self) { context in
-            VStack {
-                Text("Hello")
-            }
-            .activityBackgroundTint(Color.cyan)
-            .activitySystemActionForegroundColor(Color.black)
-
+            LiveActivityView(state: context.state)
         } dynamicIsland: { context in
             DynamicIsland {
                 DynamicIslandExpandedRegion(.leading) {
