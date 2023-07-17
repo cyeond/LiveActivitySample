@@ -108,12 +108,27 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9At-yc-EjL">
+                                        <rect key="frame" x="204" y="20" width="60" height="60"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="dSH-73-MQ5"/>
+                                            <constraint firstAttribute="width" constant="60" id="nht-r2-qLk"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="changeImage:" destination="bcI-rv-NMB" eventType="touchUpInside" id="MUV-be-rm8"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="VgW-Im-gVf" firstAttribute="top" secondItem="6rS-Ti-8hS" secondAttribute="top" constant="20" id="5Lf-Dk-jdZ"/>
                                     <constraint firstAttribute="height" constant="100" id="XkB-f3-OTA"/>
                                     <constraint firstItem="VgW-Im-gVf" firstAttribute="leading" secondItem="6rS-Ti-8hS" secondAttribute="leading" constant="20" id="huI-FW-F3c"/>
+                                    <constraint firstAttribute="bottom" secondItem="9At-yc-EjL" secondAttribute="bottom" constant="20" id="iTE-YO-lsr"/>
+                                    <constraint firstItem="9At-yc-EjL" firstAttribute="top" secondItem="6rS-Ti-8hS" secondAttribute="top" constant="20" id="jhd-4P-XvQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="9At-yc-EjL" secondAttribute="trailing" constant="20" id="kDg-uW-RUK"/>
                                     <constraint firstItem="fKq-3d-WDe" firstAttribute="leading" secondItem="6rS-Ti-8hS" secondAttribute="leading" constant="20" id="loC-gf-Ab3"/>
                                     <constraint firstAttribute="bottom" secondItem="oA7-xw-fdp" secondAttribute="bottom" constant="20" id="pTW-PF-mYQ"/>
                                     <constraint firstItem="fKq-3d-WDe" firstAttribute="top" secondItem="VgW-Im-gVf" secondAttribute="bottom" constant="20" id="vhH-Nr-Yd1"/>
@@ -169,6 +184,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="oA7-xw-fdp" id="KPh-ni-Zdj"/>
                         <outlet property="titleLabel" destination="VgW-Im-gVf" id="mSc-eU-9BG"/>
                         <outlet property="titleTF" destination="eZy-wR-7Q8" id="3gM-Qd-gv4"/>
                     </connections>
