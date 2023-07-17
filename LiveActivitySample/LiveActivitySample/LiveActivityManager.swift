@@ -17,7 +17,7 @@ class LiveActivityManager {
     private init() { }
     
     func startActivity(title: String, time: Date) {
-        guard ActivityAuthorizationInfo().areActivitiesEnabled else { return }
+        guard ActivityAuthorizationInfo().areActivitiesEnabled, self.activity == nil else { return }
         Task {
             do {
                 let updatedStatus = LiveActivityAttributes.ContentState(title: title, time: time)
