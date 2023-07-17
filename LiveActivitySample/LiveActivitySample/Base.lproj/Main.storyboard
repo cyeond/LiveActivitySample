@@ -84,8 +84,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gear" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oA7-xw-fdp">
-                                        <rect key="frame" x="204" y="20" width="60" height="60.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="applewatch.watchface" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oA7-xw-fdp">
+                                        <rect key="frame" x="204" y="20" width="60" height="60"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="6am-Cb-VMl"/>
@@ -194,7 +194,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear" catalog="system" width="128" height="122"/>
+        <image name="applewatch.watchface" catalog="system" width="110" height="128"/>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
