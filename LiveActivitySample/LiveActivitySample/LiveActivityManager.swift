@@ -16,11 +16,11 @@ class LiveActivityManager {
     
     private init() { }
     
-    func startActivity(title: String) {
+    func startActivity(title: String, time: Date) {
         guard ActivityAuthorizationInfo().areActivitiesEnabled else { return }
         Task {
             do {
-                let updatedStatus = LiveActivityAttributes.ContentState(title: title, time: Date())
+                let updatedStatus = LiveActivityAttributes.ContentState(title: title, time: time)
                 let content = ActivityContent(state: updatedStatus, staleDate: nil)
                 let activity = try Activity<LiveActivityAttributes>.request(
                     attributes: LiveActivityAttributes(),

@@ -15,14 +15,15 @@ struct LiveActivityView: View {
             VStack(alignment: .leading, spacing: 0) {
                 Text(state.title)
                     .foregroundColor(.white)
-                    .frame(width: 100.0, height: 20.0, alignment: .leading)
+                    .font(.system(size: 17.0))
+                    .frame(width: 150.0, height: 20.0, alignment: .leading)
                     .padding(.top, 20.0)
                 
                 Spacer()
                 
                 Text(state.time, style: .timer)
                     .foregroundColor(.white)
-                    .frame(width: 100.0, height: 20.0)
+                    .frame(width: 150.0, height: 20.0)
                     .padding(.bottom, 20.0)
             }
             .frame(height: 50.0)
@@ -32,6 +33,7 @@ struct LiveActivityView: View {
             
             Image(systemName: "gear")
                 .resizable()
+                .foregroundColor(.white)
                 .frame(width: 60.0, height: 60.0)
                 .cornerRadius(15.0)
                 .padding(.trailing, 20.0)

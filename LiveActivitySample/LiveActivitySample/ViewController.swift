@@ -16,9 +16,20 @@ class ViewController: UIViewController {
         self.titleTF.delegate = self
     }
     
-    @IBAction func changeTitle(_ sender: UIButton) {
+    @IBAction func start(_ sender: UIButton) {
+        if let title = titleLabel.text, !title.isEmpty {
+            LiveActivityManager.shared.startActivity(title: title, time: Date())
+        }
+    }
+    
+    @IBAction func stop(_ sender: UIButton) {
+        LiveActivityManager.shared.stopActivity()
+    }
+    
+    @IBAction func update(_ sender: UIButton) {
         if let title = titleTF.text, !title.isEmpty {
             titleLabel.text = title
+            titleTF.text = ""
             LiveActivityManager.shared.updateActivity(title: title, time: Date() + 60.0)
         }
     }
