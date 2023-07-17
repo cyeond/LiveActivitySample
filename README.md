@@ -5,6 +5,12 @@
 <br>
 <br>
 
+<p align="leading">
+  <img width="25%" src="https://github.com/cyeond/LiveActivitySample/assets/139483587/b236e5f1-6c14-4d45-afbd-5a005fb5006f">
+</p>
+
+<br>
+
 ## 기본 내용
 - ActivityKit 사용
 - 잠금화면 또는 다이나믹 아일랜드에 앱 실시간 현황을 보여줌
