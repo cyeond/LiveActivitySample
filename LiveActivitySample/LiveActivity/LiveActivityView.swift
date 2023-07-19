@@ -31,8 +31,9 @@ struct LiveActivityView: View {
             
             Spacer()
             
-            Image(systemName: "gear")
+            Image(systemName: "applewatch.watchface")
                 .resizable()
+                .aspectRatio(contentMode: .fit)
                 .foregroundColor(.white)
                 .frame(width: 60.0, height: 60.0)
                 .cornerRadius(15.0)
