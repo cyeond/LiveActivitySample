@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     private var changeTitleAlertController: UIAlertController?
     private var phPicker: PHPickerViewController?
     private var datePicker = UIDatePicker()
+    private var time = 180.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +69,7 @@ class ViewController: UIViewController {
     
     @IBAction func start(_ sender: UIButton) {
         if let title = titleLabel.text, !title.isEmpty {
-            LiveActivityManager.shared.startActivity(title: title, time: Date())
+            LiveActivityManager.shared.startActivity(title: title, time: Date() + time)
         }
     }
     
@@ -78,7 +79,7 @@ class ViewController: UIViewController {
     
     @IBAction func update(_ sender: UIButton) {
         if let title = titleLabel.text, !title.isEmpty {
-            LiveActivityManager.shared.updateActivity(title: title, time: Date() + 60.0)
+            LiveActivityManager.shared.updateActivity(title: title, time: Date() + time)
         }
     }
     
@@ -95,14 +96,19 @@ class ViewController: UIViewController {
     }
     
     @objc private func dateSelected() {
-//        let date = Date(timeIntervalSinceNow: datePicker.countDownDuration)
+        let time = datePicker.countDownDuration
         let formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.minute, .second]
+        formatter.allowedUnits = [.hour, .minute, .second]
         formatter.unitsStyle = .positional
 
-        if let formattedString = formatter.string(from: TimeInterval(datePicker.countDownDuration)) {
-            self.timeLabel.text = formattedString
+        if let formattedString = formatter.string(from: TimeInterval(time)) {
+            DispatchQueue.main.async {
+                self.timeLabel.text = formattedString
+                self.time = time
+            }
         }
+        
+        self.tfForDatePicker.resignFirstResponder()
     }
 }
 
