@@ -129,14 +129,3 @@ extension ViewController: PHPickerViewControllerDelegate {
         }
     }
 }
-
-extension UIImage {
-    func resize(newWidth: CGFloat) -> UIImage {
-        let size = CGSize(width: newWidth, height: newWidth)
-        let render = UIGraphicsImageRenderer(size: size)
-        let renderImage = render.image { context in
-            self.draw(in: CGRect(origin: .zero, size: size))
-        }
-        return renderImage
-    }
-}
