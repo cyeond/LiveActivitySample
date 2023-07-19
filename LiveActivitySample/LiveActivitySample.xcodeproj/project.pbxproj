@@ -21,6 +21,8 @@
 		786A1D3C2A642FD300634FFF /* LiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 786A1D2A2A642FD300634FFF /* LiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		786A1D422A64308E00634FFF /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860BCB22A63BF4A0022953D /* LiveActivityManager.swift */; };
 		78857AF02A683071006811FC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78857AEF2A683071006811FC /* Extensions.swift */; };
+		78857AF42A6842DF006811FC /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78857AF32A6842DF006811FC /* ImageManager.swift */; };
+		78857AF52A6843AD006811FC /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78857AF32A6842DF006811FC /* ImageManager.swift */; };
 		78C364C62A6569B80024BAF3 /* LiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C364C52A6569B80024BAF3 /* LiveActivityAttributes.swift */; };
 		78C364C72A656A130024BAF3 /* LiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C364C52A6569B80024BAF3 /* LiveActivityAttributes.swift */; };
 		78C364C92A656AD40024BAF3 /* LiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C364C82A656AD40024BAF3 /* LiveActivityView.swift */; };
@@ -67,6 +69,9 @@
 		786A1D372A642FD300634FFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		786A1D392A642FD300634FFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78857AEF2A683071006811FC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		78857AF12A68423A006811FC /* LiveActivitySample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LiveActivitySample.entitlements; sourceTree = "<group>"; };
+		78857AF22A684259006811FC /* LiveActivityExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LiveActivityExtension.entitlements; sourceTree = "<group>"; };
+		78857AF32A6842DF006811FC /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		78C364C52A6569B80024BAF3 /* LiveActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityAttributes.swift; sourceTree = "<group>"; };
 		78C364C82A656AD40024BAF3 /* LiveActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +99,7 @@
 		7860BC922A63BEE10022953D = {
 			isa = PBXGroup;
 			children = (
+				78857AF22A684259006811FC /* LiveActivityExtension.entitlements */,
 				7860BC9D2A63BEE10022953D /* LiveActivitySample */,
 				786A1D302A642FD300634FFF /* LiveActivity */,
 				786A1D2B2A642FD300634FFF /* Frameworks */,
@@ -113,9 +119,11 @@
 		7860BC9D2A63BEE10022953D /* LiveActivitySample */ = {
 			isa = PBXGroup;
 			children = (
+				78857AF12A68423A006811FC /* LiveActivitySample.entitlements */,
 				7860BC9E2A63BEE10022953D /* AppDelegate.swift */,
 				7860BCA22A63BEE10022953D /* ViewController.swift */,
 				7860BCB22A63BF4A0022953D /* LiveActivityManager.swift */,
+				78857AF32A6842DF006811FC /* ImageManager.swift */,
 				78857AEF2A683071006811FC /* Extensions.swift */,
 				7860BCA42A63BEE10022953D /* Main.storyboard */,
 				7860BCA92A63BEE20022953D /* LaunchScreen.storyboard */,
@@ -252,6 +260,7 @@
 				78857AF02A683071006811FC /* Extensions.swift in Sources */,
 				78C364C72A656A130024BAF3 /* LiveActivityAttributes.swift in Sources */,
 				7860BCA32A63BEE10022953D /* ViewController.swift in Sources */,
+				78857AF42A6842DF006811FC /* ImageManager.swift in Sources */,
 				7860BC9F2A63BEE10022953D /* AppDelegate.swift in Sources */,
 				7860BCB32A63BF4A0022953D /* LiveActivityManager.swift in Sources */,
 			);
@@ -264,6 +273,7 @@
 				786A1D322A642FD300634FFF /* LiveActivityBundle.swift in Sources */,
 				786A1D342A642FD300634FFF /* LiveActivity.swift in Sources */,
 				78C364C92A656AD40024BAF3 /* LiveActivityView.swift in Sources */,
+				78857AF52A6843AD006811FC /* ImageManager.swift in Sources */,
 				786A1D422A64308E00634FFF /* LiveActivityManager.swift in Sources */,
 				78C364C62A6569B80024BAF3 /* LiveActivityAttributes.swift in Sources */,
 			);
@@ -419,6 +429,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LiveActivitySample/LiveActivitySample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5WNP4LSBY4;
@@ -450,6 +461,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LiveActivitySample/LiveActivitySample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5WNP4LSBY4;
@@ -480,6 +492,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = LiveActivityExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5WNP4LSBY4;
@@ -508,6 +521,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = LiveActivityExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5WNP4LSBY4;

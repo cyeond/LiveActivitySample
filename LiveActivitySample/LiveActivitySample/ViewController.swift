@@ -25,7 +25,6 @@ class ViewController: UIViewController {
         self.configureChangeTitleAlertController()
         self.configureDatePicker()
         self.configurePHPicker()
-        
     }
     
     private func configureChangeTitleAlertController() {
@@ -68,8 +67,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func start(_ sender: UIButton) {
-        if let title = titleLabel.text, !title.isEmpty {
+        if let title = titleLabel.text, !title.isEmpty, let image = imageView.image {
             LiveActivityManager.shared.startActivity(title: title, time: Date() + time)
+            ImageManager.shared.saveImage(uiImage: image)
         }
     }
     
@@ -78,8 +78,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func update(_ sender: UIButton) {
-        if let title = titleLabel.text, !title.isEmpty {
+        if let title = titleLabel.text, !title.isEmpty, let image = imageView.image {
             LiveActivityManager.shared.updateActivity(title: title, time: Date() + time)
+            ImageManager.shared.saveImage(uiImage: image)
         }
     }
     
