@@ -95,6 +95,14 @@ class ViewController: UIViewController {
     }
     
     @objc private func dateSelected() {
+//        let date = Date(timeIntervalSinceNow: datePicker.countDownDuration)
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.minute, .second]
+        formatter.unitsStyle = .positional
+
+        if let formattedString = formatter.string(from: TimeInterval(datePicker.countDownDuration)) {
+            self.timeLabel.text = formattedString
+        }
     }
 }
 
