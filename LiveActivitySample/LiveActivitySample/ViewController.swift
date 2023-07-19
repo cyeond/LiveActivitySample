@@ -10,15 +10,19 @@ import PhotosUI
 
 class ViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var tfForDatePicker: UITextField!
     
     private var changeTitleAlertController: UIAlertController?
     private var phPicker: PHPickerViewController?
+    private var datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.configureChangeTitleAlertController()
+        self.configureDatePicker()
         self.configurePHPicker()
         
     }
@@ -37,6 +41,20 @@ class ViewController: UIViewController {
         alertController.addAction(okAction)
         
         self.changeTitleAlertController = alertController
+    }
+    
+    private func configureDatePicker() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(dateSelected))
+        toolbar.setItems([doneButton], animated: true)
+        
+        self.datePicker.datePickerMode = .countDownTimer
+        self.datePicker.locale = .init(identifier: "ko-KR")
+        
+        self.tfForDatePicker.inputAccessoryView = toolbar
+        self.tfForDatePicker.inputView = self.datePicker
     }
     
     private func configurePHPicker() {
@@ -65,21 +83,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func changeTitle(_ sender: UIButton) {
-        guard let alert = self.changeTitleAlertController else {
-            // handle error
-            return
-        }
+        guard let alert = self.changeTitleAlertController else { return }
         
         self.present(alert, animated: true)
     }
     
     @IBAction func changeImage(_ sender: UIButton) {
-        guard let phPicker = self.phPicker else {
-            // handle error
-            return
-        }
+        guard let phPicker = self.phPicker else { return }
         
         self.present(phPicker, animated: true)
+    }
+    
+    @objc private func dateSelected() {
     }
 }
 
@@ -91,16 +106,12 @@ extension ViewController: PHPickerViewControllerDelegate {
         
         if let itemProvider = results.first?.itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self) {
             itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
-                guard let image = image as? UIImage else {
-                    // handle error
-                    return
-                }
+                guard let image = image as? UIImage else { return }
+                
                 DispatchQueue.main.async {
                     self.imageView.image = image.resize(newWidth: 100.0)
                 }
             }
-        } else {
-            // handle error
         }
     }
 }

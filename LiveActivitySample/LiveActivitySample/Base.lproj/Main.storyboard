@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -121,13 +122,27 @@
                                             <action selector="changeTitle:" destination="bcI-rv-NMB" eventType="touchUpInside" id="17m-1k-8xk"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xxn-cp-gDL">
+                                        <rect key="frame" x="20" y="60" width="150" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Dw9-44-zKP"/>
+                                            <constraint firstAttribute="width" constant="150" id="Xqg-Xf-eI0"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="VgW-Im-gVf" firstAttribute="top" secondItem="6rS-Ti-8hS" secondAttribute="top" constant="20" id="5Lf-Dk-jdZ"/>
                                     <constraint firstItem="kOs-UQ-awn" firstAttribute="leading" secondItem="6rS-Ti-8hS" secondAttribute="leading" constant="20" id="Jiy-hK-4fE"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xxn-cp-gDL" secondAttribute="bottom" constant="20" id="OQC-om-Edm"/>
                                     <constraint firstAttribute="height" constant="100" id="XkB-f3-OTA"/>
                                     <constraint firstItem="kOs-UQ-awn" firstAttribute="top" secondItem="6rS-Ti-8hS" secondAttribute="top" constant="20" id="XvL-Vh-9i8"/>
+                                    <constraint firstItem="Xxn-cp-gDL" firstAttribute="leading" secondItem="6rS-Ti-8hS" secondAttribute="leading" constant="20" id="YwN-9O-gAW"/>
                                     <constraint firstItem="VgW-Im-gVf" firstAttribute="leading" secondItem="6rS-Ti-8hS" secondAttribute="leading" constant="20" id="huI-FW-F3c"/>
                                     <constraint firstAttribute="bottom" secondItem="9At-yc-EjL" secondAttribute="bottom" constant="20" id="iTE-YO-lsr"/>
                                     <constraint firstItem="9At-yc-EjL" firstAttribute="top" secondItem="6rS-Ti-8hS" secondAttribute="top" constant="20" id="jhd-4P-XvQ"/>
@@ -185,6 +200,8 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="oA7-xw-fdp" id="KPh-ni-Zdj"/>
+                        <outlet property="tfForDatePicker" destination="Xxn-cp-gDL" id="vxM-ry-HnE"/>
+                        <outlet property="timeLabel" destination="fKq-3d-WDe" id="p5Z-tY-1sw"/>
                         <outlet property="titleLabel" destination="VgW-Im-gVf" id="mSc-eU-9BG"/>
                     </connections>
                 </viewController>
