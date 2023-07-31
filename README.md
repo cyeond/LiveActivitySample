@@ -10,7 +10,7 @@
 </p>
 <p align="leading">
   <img width="25%" src="https://github.com/cyeond/LiveActivitySample/assets/139483587/130beb50-0bfb-47ec-81e7-66862da8ba01">
-  <img width="25%" src="https://github.com/cyeond/LiveActivitySample/assets/139483587/68b277a9-92ed-460e-b678-a316064270a2">
+  <img width="25%" src="https://github.com/cyeond/LiveActivitySample/assets/139483587/9ef7c133-0b49-4835-be2e-412d685c3b02">
 </p>
 <p align="leading">
   <img width="20%" src="https://github.com/cyeond/LiveActivitySample/assets/139483587/35795156-8230-4858-b551-12c2d00065c5">
