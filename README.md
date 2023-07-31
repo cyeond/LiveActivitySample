@@ -9,7 +9,13 @@
   <img src="https://img.shields.io/badge/iOS-16.2+-blue"/>
 </p>
 <p align="leading">
-  <img width="25%" src="https://github.com/cyeond/LiveActivitySample/assets/139483587/b236e5f1-6c14-4d45-afbd-5a005fb5006f">
+  <img width="25%" src="https://github.com/cyeond/LiveActivitySample/assets/139483587/130beb50-0bfb-47ec-81e7-66862da8ba01">
+  <img width="25%" src="https://github.com/cyeond/LiveActivitySample/assets/139483587/9ef7c133-0b49-4835-be2e-412d685c3b02">
+</p>
+<p align="leading">
+  <img width="20%" src="https://github.com/cyeond/LiveActivitySample/assets/139483587/35795156-8230-4858-b551-12c2d00065c5">
+  <img width="20%" src="https://github.com/cyeond/LiveActivitySample/assets/139483587/ea2bd89f-6dc8-4d66-bdf5-e8ff9a83915b">
+  <img width="20%" src="https://github.com/cyeond/LiveActivitySample/assets/139483587/37e5bc32-c6d9-4efd-849f-341156fa23bf">
 </p>
 
 <br>
