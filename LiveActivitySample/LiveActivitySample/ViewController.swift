@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         self.configureChangeTitleAlertController()
         self.configureDatePicker()
         self.configurePHPicker()
+        self.imageView.image = UIImage(named: "sample_image")?.resize(newWidth: 100.0)
     }
     
     private func configureChangeTitleAlertController() {
